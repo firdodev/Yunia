@@ -22,7 +22,7 @@ We welcome contributions! See our [contributing guide](CONTRIBUTING.md) for deta
 
 ## License
 
-Yunia is licensed under the [MIT License](LICENSE.md). See the LICENSE file for more details.
+Yunia is licensed under the [MIT License](LICENSE). See the LICENSE file for more details.
 
 ## Contact
 
