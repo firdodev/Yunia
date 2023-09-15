@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "Window.h"
 
 namespace Yunia {
 
@@ -7,6 +8,8 @@ namespace Yunia {
 	public:
 		// Define any specifications for your application here.
 		std::string Name = "Yunia Application";
+		int Width = 800;
+		int Height = 600;
 	};
 
 	class Application
@@ -16,8 +19,9 @@ namespace Yunia {
 		virtual ~Application();
 
 		void Run();
+	private:
+		Window* m_Window;
 	};
 
 	Application* CreateApplication(int argc, char** argv);
 }
-

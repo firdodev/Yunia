@@ -15,12 +15,14 @@ project "Yunia"
 
     links
     {
-      "ImGui"
+      "ImGui",
+      "d3d11.lib",
+      "dxgi.lib",
+      "user32.lib"
     }
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("../bin-int/" .. outputdir .. "/%{prj.name}")
-
 
     filter "system:windows"
       systemversion "latest"
