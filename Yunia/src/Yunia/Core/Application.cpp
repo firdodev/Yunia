@@ -20,6 +20,9 @@ namespace Yunia {
 	void Application::Run()
 	{
 		while (m_Window->IsRunning()) {
+			float ts = 1.0f / 60.0f;
+			m_ComponentStack.Update(ts);
+			m_ComponentStack.UIRender();
 			m_Window->PollEvents();
 		}
 	}
