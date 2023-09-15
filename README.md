@@ -30,7 +30,7 @@ For questions, support, or collaboration, please reach out to us at [firdeuskasa
 
 ---
 
-Crafted with ❤️ by the Unyo & Yunia Team.
+Crafted with ❤️ by the Yunia Team part of UnyoCorp.
 
 Thanks to:
 - **Dear IMGUI**
