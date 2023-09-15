@@ -9,7 +9,13 @@ project "Yunia"
 
     includedirs
     {
-      "src"
+      "src",
+      "../vendor/imgui"
+    }
+
+    links
+    {
+      "ImGui"
     }
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
