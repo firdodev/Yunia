@@ -33,7 +33,7 @@ For questions, support, or collaboration, please reach out to us at [firdeuskasa
 Crafted with ❤️ by the Yunia Team part of UnyoCorp.
 
 Thanks to:
-- **Dear IMGUI**
-- **GLFW**
+- **Dear IMGUI from StudioCherno**
+- **DirectX11**
 
 ---
