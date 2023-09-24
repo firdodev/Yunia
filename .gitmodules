@@ -1,4 +1,3 @@
 [submodule "vendor/imgui"]
 	path = vendor/imgui
 	url = https://github.com/TheCherno/imgui.git
-	branch = docking

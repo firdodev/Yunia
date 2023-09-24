@@ -15,6 +15,8 @@ namespace Yunia {
 		bool IsRunning();
 		void PollEvents();
 
+		HWND GetHWND() { return m_hWnd; };
+
 	private:
 		HWND m_hWnd;
 		int m_Width, m_Height;
