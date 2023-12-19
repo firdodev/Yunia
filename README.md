@@ -38,4 +38,5 @@ Thanks to:
 - **Vulkan**
 - **GLM**
 - **STB_IMAGE**
+- **Walnut**
 ---
