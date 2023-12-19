@@ -9,8 +9,13 @@ project "YuniaApp"
 
    includedirs
    {
+      "../vendor/imgui",
+      "../vendor/glfw/include",
 
-    "../Yunia/src",
+      "../Yunia/src",
+
+      "%{IncludeDir.VulkanSDK}",
+      "%{IncludeDir.glm}",
    }
 
     links

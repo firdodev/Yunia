@@ -34,6 +34,8 @@ Crafted with ❤️ by the Yunia Team part of UnyoCorp.
 
 Thanks to:
 - **Dear IMGUI from StudioCherno**
-- **DirectX11**
-
+- **GLFW**
+- **Vulkan**
+- **GLM**
+- **STB_IMAGE**
 ---

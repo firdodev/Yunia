@@ -1,45 +1,51 @@
 project "Yunia"
-    kind "StaticLib"
-    language "C++"
-    cppdialect "C++17"
-    targetdir "bin/%{cfg.buildcfg}"
-    staticruntime "off"
+   kind "StaticLib"
+   language "C++"
+   cppdialect "C++17"
+   targetdir "bin/%{cfg.buildcfg}"
+   staticruntime "off"
 
-    files { "src/**.h", "src/**.cpp" }
+   files { "src/**.h", "src/**.cpp" }
 
-    includedirs
-    {
+   includedirs
+   {
       "src",
-      "../vendor/imgui"
-    }
 
-    links
-    {
-      "ImGui",
-      "d3d11.lib",
-      "dxgi.lib",
-      "user32.lib"
-    }
+      "../vendor/imgui",
+      "../vendor/glfw/include",
+      "../vendor/stb_image",
 
-    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-    objdir ("../bin-int/" .. outputdir .. "/%{prj.name}")
+      "%{IncludeDir.VulkanSDK}",
+      "%{IncludeDir.glm}",
+   }
 
-    filter "system:windows"
+   links
+   {
+       "ImGui",
+       "GLFW",
+
+       "%{Library.Vulkan}",
+   }
+
+   targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+   objdir ("../bin-int/" .. outputdir .. "/%{prj.name}")
+
+   filter "system:windows"
       systemversion "latest"
       defines { "YU_PLATFORM_WINDOWS" }
 
-    filter "configurations:Debug"
+   filter "configurations:Debug"
       defines { "YU_DEBUG" }
       runtime "Debug"
       symbols "On"
 
-    filter "configurations:Release"
+   filter "configurations:Release"
       defines { "YU_RELEASE" }
       runtime "Release"
       optimize "On"
       symbols "On"
 
-    filter "configurations:Dist"
+   filter "configurations:Dist"
       defines { "YU_DIST" }
       runtime "Release"
       optimize "On"

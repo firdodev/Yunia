@@ -1,32 +1,38 @@
-#include <Yunia/Yunia.h>
-#include <Yunia/Core/EntryPoint.h>
-#include <iostream>
+#include "Yunia/Application.h"
+#include "Yunia/EntryPoint.h"
 
+#include "Yunia/Image.h"
 
-class PrintMessageComponent : public Yunia::Component
+class ExampleComponent : public Yunia::Component
 {
 public:
-	PrintMessageComponent(const std::string& message) : m_Message(message) {}
+	virtual void OnUIRender() override
+	{
+		ImGui::Begin("Hello");
+		ImGui::Button("Button");
+		ImGui::End();
 
-	void OnAttach() override {
-		std::cout << "PrintMessageComponent attached!" << std::endl;
+		ImGui::ShowDemoWindow();
 	}
-
-	void OnUpdate(float ts) override {
-	}
-
-private:
-	std::string m_Message;
 };
 
-Yunia::Application* Yunia::CreateApplication(int argc, char** argv) {
+Yunia::Application* Yunia::CreateApplication(int argc, char** argv)
+{
 	Yunia::ApplicationSpecification spec;
 	spec.Name = "Yunia Example";
 
 	Yunia::Application* app = new Yunia::Application(spec);
-
-	PrintMessageComponent* messageComponent = new PrintMessageComponent("Hello from the component!");
-	app->PushComponent(messageComponent);
-
+	app->PushComponent<ExampleComponent>();
+	app->SetMenubarCallback([app]()
+	{
+		if (ImGui::BeginMenu("File"))
+		{
+			if (ImGui::MenuItem("Exit"))
+			{
+				app->Close();
+			}
+			ImGui::EndMenu();
+		}
+	});
 	return app;
 }
